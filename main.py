@@ -65,13 +65,56 @@ def initialSolve(PODs,DPCs,matrix,PO):
 	DPCsOcupied = []
 	remainingCapacity = []
 	while size(listDPC,1)>0 and size(listPOD,1) > 0:
-		remainingCapacityPOD = 
+		remainingCapacityPOD = listPOD[1].capacity
+		regionPOD = listDPCs(listPOD,listDPCs,matrix)
+		#to review
+		#push
+		remainingCapacityPOD = listPOD[location].capacity - sum(regionPOD.demandDPC)
+		if location == size(listDPC, 1):
+			return DPCsAssign
+			pass
+
 		pass
 	pass
 
+def graphicRoute():
+	pass
 
+def copySOL():
+	pass
 
+def PODnotUsed():
+	pass
 
+def DPCnotUsed():
+	pass
+
+def whichInterchange():
+	pass
+
+def remainingCapacity():
+	pass
+
+def addDPCremaing():
+	pass
+
+def createNeightbours():
+	pass
+
+def identifyInterchange():
+	pass
+
+def update():
+	pass
+
+def evaluateMovement():
+		pass	
+
+def tabuMovement():
+	pass
+
+def localSearch():
+	pass
 
 #resouses_file 	1- vehiculos 
 #				2- personas o rescatistas
