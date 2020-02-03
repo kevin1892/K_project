@@ -29,7 +29,12 @@ def distance(X_POD,X_DPC,Y_POD,Y_DCP,POD,DPC):
 	return 1.2*(sqrt((X_POD[POD] - X_DPC[DPC])^2+(Y_POD[POD]-Y_DPC[DPC])^2))
 
 def distanceMatrix(PODs,DPCs):
-	matrix = [ [0.0]*4 for n in range(3) ]
+	matrix = [ [0.0]*4 for n in range(3) ] #to review
+	for x in xrange(1,size(matrix,1)):
+		for y in xrange(1,size(matrix,2)):
+			matrix[x,y] = distance(PODs.X_POD,DPCs.X_DPC,PODs.Y_POD,DPCs.Y_DPC,x,y)
+			pass
+		pass
 	return matrix # To review
 
 def DPCsList(PODs,DPCs,matrix):
@@ -37,7 +42,13 @@ def DPCsList(PODs,DPCs,matrix):
 	for x in xrange(1,size(DPCs,1)):
 		#To review
 		pass
-	return done
+	indexList = DPCs.DPC
+	nameList = DPCs.nameDPC
+	demandList = DPCs.demandDPC
+	df = DataFrame(DPC = indexList,nameDPC = nameList, demandDPC = demandList,distancePOD = distanceList, severity = DPCs.severityDPC)
+	df = sort(df,(:distancePOD), rev = (False)) #to review
+	df = sort(df,(:Severidad), rev = (True))  	#to review
+	return df
 
 def updateList(region, positions, mode):
 	regionCopy = region
